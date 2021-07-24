@@ -1,13 +1,29 @@
+//APLICAR VALIDACION EN EJERCICIOS
+
 function mostrar()
 {
-	var contador;
-	var acumulador;
-	var numeroIngresado;
+	let contador = 0;
+	let numero;
+	let acumulador = 0;
+	let promedio;
 
-	contador=0;
-	acumulador=0;
-	
-	
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
-}//FIN DE LA FUNCIÓN
+	while(contador < 5){  
+
+		numero = parseInt(prompt("Ingrese un número: "));
+		while(isNaN(numero)){
+			numero =parseInt(prompt("Eso no es un número. Ingrese nuevamente un número: ")); //ojo esto! que esté!
+		}
+
+		acumulador = acumulador + numero;
+
+		contador++; //esto es sinonimo de contador = contador + 1
+
+	}
+
+	promedio = acumulador / 5;
+
+	document.getElementById("txtIdSuma").value = acumulador;
+
+	document.getElementById("txtIdPromedio").value = promedio;
+
+}
